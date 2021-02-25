@@ -20,3 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(b7e28bae-ecb7-45ae-8411-0ba577c1e5bc)'
+    appType: 'webApp'
+    WebAppName: 'SpringHelloWorld'
+    packageForLinux: 'dist/'
